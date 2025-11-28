@@ -1,0 +1,288 @@
+/* ==========================================
+   AGREGAR DESTINO - ESTILOS
+   ========================================== */
+
+ion-content {
+  --background: #f7f9fc;
+}
+
+/* Contenedor del formulario */
+.ion-padding {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* Items del formulario */
+ion-item {
+  --background: #ffffff;
+  --border-radius: 14px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --inner-padding-end: 0;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+
+  ion-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  ion-input,
+  ion-textarea {
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    --padding-start: 0;
+    --padding-end: 0;
+    font-size: 0.95rem;
+    color: #222;
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  ion-textarea {
+    --padding-top: 10px;
+    min-height: 120px;
+  }
+
+  /* Input de archivo personalizado */
+  input[type="file"] {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+
+    &::file-selector-button {
+      background: linear-gradient(135deg, #00bcd4, #0097a7);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-right: 12px;
+
+      &:hover {
+        background: linear-gradient(135deg, #0097a7, #00838f);
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+/* Botón de guardar */
+ion-button[expand="block"] {
+  margin-top: 30px;
+  --border-radius: 14px;
+  --box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  height: 52px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    --box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - TABLET
+   ========================================== */
+@media (min-width: 768px) {
+  .ion-padding {
+    padding: 40px 60px;
+  }
+
+  ion-item {
+    --padding-start: 20px;
+    --padding-end: 20px;
+    margin-bottom: 24px;
+
+    ion-label {
+      font-size: 1rem;
+    }
+
+    ion-input,
+    ion-textarea {
+      font-size: 1rem;
+    }
+
+    ion-textarea {
+      min-height: 140px;
+    }
+
+    input[type="file"] {
+      font-size: 0.95rem;
+
+      &::file-selector-button {
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  ion-button[expand="block"] {
+    height: 56px;
+    font-size: 1.05rem;
+    margin-top: 35px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - PC/DESKTOP
+   ========================================== */
+@media (min-width: 1024px) {
+  .ion-padding {
+    padding: 50px 100px;
+  }
+
+  ion-item {
+    margin-bottom: 28px;
+
+    ion-label {
+      font-size: 1.05rem;
+    }
+
+    ion-input,
+    ion-textarea {
+      font-size: 1.05rem;
+    }
+
+    ion-textarea {
+      min-height: 180px;
+    }
+  }
+
+  ion-button[expand="block"] {
+    height: 58px;
+    font-size: 1.1rem;
+    margin-top: 40px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - PANTALLAS MUY GRANDES
+   ========================================== */
+@media (min-width: 1440px) {
+  .ion-padding {
+    padding: 60px 150px;
+  }
+
+  ion-item {
+    margin-bottom: 32px;
+
+    ion-textarea {
+      min-height: 200px;
+    }
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MÓVIL PEQUEÑO
+   ========================================== */
+@media (max-width: 360px) {
+  .ion-padding {
+    padding: 20px 15px;
+  }
+
+  ion-item {
+    --padding-start: 12px;
+    --padding-end: 12px;
+    margin-bottom: 16px;
+
+    ion-label {
+      font-size: 0.9rem;
+    }
+
+    ion-input,
+    ion-textarea {
+      font-size: 0.9rem;
+    }
+
+    ion-textarea {
+      min-height: 100px;
+    }
+
+    input[type="file"] {
+      font-size: 0.85rem;
+
+      &::file-selector-button {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  ion-button[expand="block"] {
+    height: 48px;
+    font-size: 0.95rem;
+    margin-top: 25px;
+  }
+}
+
+/* ==========================================
+   MODO OSCURO
+   ========================================== */
+@media (prefers-color-scheme: dark) {
+  ion-content {
+    --background: #121212;
+  }
+
+  ion-item {
+    --background: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    ion-label {
+      color: #ffffff;
+    }
+
+    ion-input,
+    ion-textarea {
+      color: #ffffff;
+
+      &::placeholder {
+        color: #888;
+      }
+    }
+
+    input[type="file"] {
+      color: #ccc;
+
+      &::file-selector-button {
+        background: linear-gradient(135deg, #00bcd4, #0097a7);
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+/* ==========================================
+   ANIMACIONES Y FOCUS
+   ========================================== */
+ion-item {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:focus-within {
+    box-shadow: 0 4px 16px rgba(0, 188, 212, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+/* Validación visual (opcional) */
+ion-item.ion-invalid.ion-touched {
+  --border-color: #ff4757;
+  --highlight-color-focused: #ff4757;
+}

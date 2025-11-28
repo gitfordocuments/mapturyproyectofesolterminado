@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="favoritos.length > 0; else noFavs">
+
+    <ion-card *ngFor="let lugar of favoritos" (click)="verDetalles(lugar.id)">
+      <img [src]="lugar.imagen_url" alt="imagen lugar" />
+
+      <ion-card-header>
+        <ion-card-title>{{ lugar.titulo }}</ion-card-title>
+
+        <ion-card-subtitle>
+          Lat: {{ lugar.latitud }}, Lng: {{ lugar.longitud }}
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{ lugar.descripcion }}
+
+        <div class="boton-detalles">
+          <ion-button 
+            color="primary" 
+            size="small"
+            (click)="verDetalles(lugar.id); $event.stopPropagation()">
+            Ver detalles
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+
+  </ion-list>
+
+  <ng-template #noFavs>
+    <div class="no-favoritos">
+      <ion-icon name="heart-dislike-outline"></ion-icon>
+      <h2>No tienes lugares favoritos aún</h2>
+      <p>Explora lugares increíbles y guarda tus favoritos aquí</p>
+    </div>
+  </ng-template>
+
+</ion-content>

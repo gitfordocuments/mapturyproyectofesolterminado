@@ -1,0 +1,65 @@
+<ion-content class="registro-page">
+  <div class="container">
+    <div class="card">
+      <h2>Crear cuenta</h2>
+      <p>Únete a MapToury y empieza tu aventura.</p>
+
+      <ion-input
+        label="Nombre completo"
+        labelPlacement="stacked"
+        placeholder="Tu nombre"
+        fill="outline"
+        type="text"
+        [(ngModel)]="nombre"
+        name="nombre"
+        required>
+      </ion-input>
+
+      <ion-input
+        label="Correo electrónico"
+        labelPlacement="stacked"
+        placeholder="ejemplo@email.com"
+        fill="outline"
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required>
+      </ion-input>
+
+      <ion-input
+        label="Contraseña"
+        labelPlacement="stacked"
+        placeholder="Crea una contraseña"
+        fill="outline"
+        type="password"
+        [clearInput]="true"
+        [(ngModel)]="password"
+        name="password"
+        required>
+      </ion-input>
+
+      <ion-button
+        expand="block"
+        shape="round"
+        class="boton"
+        (click)="registrarUsuario()"
+        [disabled]="loading"
+      >
+        <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+        <span *ngIf="!loading">Crear cuenta</span>
+      </ion-button>
+
+      <ion-button
+        fill="clear"
+        expand="block"
+        (click)="goToLogin()"
+      >
+        ¿Ya tienes cuenta? Inicia sesión
+      </ion-button>
+    </div>
+
+    <div class="footer">
+      <small>🌍 Descubre. Crea. Explora.</small>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,175 @@
+/* 🧍 Contenedor del perfil */
+.profile-container {
+  text-align: center;
+  padding: 30px 20px;
+
+  .profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 4px solid #00bcd4;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2);
+  }
+
+  .profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 188, 212, 0.3);
+  }
+
+  h2 {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #222;
+  }
+
+  .email {
+    color: #7a7a7a;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  .edit-section {
+    margin-top: 20px;
+    text-align: left;
+  }
+}
+
+/* 🧾 Lista general */
+ion-list {
+  margin: 25px 15px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 8px 0;
+  overflow: hidden;
+}
+
+/* 🔥 Ítems (Favorites e Idioma) */
+ion-item {
+  --background: #f8f9fa;
+  --color: #333;
+  --border-color: transparent;
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  min-height: 56px;
+  font-weight: 500;
+  margin: 6px 8px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+/* 🎯 Efecto hover o toque */
+ion-item:hover {
+  --background: #e8f4f8;
+  transform: translateX(4px);
+}
+
+/* 💠 Íconos alineados */
+ion-icon {
+  font-size: 22px;
+  color: #00bcd4;
+  margin-right: 12px;
+}
+
+/* 🌐 Selector de idioma */
+ion-select {
+  --color: #333;
+  --placeholder-color: #999;
+  font-weight: 500;
+}
+
+.boton-favorites {
+  width: 100%;
+  justify-content: flex-start;
+  --padding-start: 0;
+}
+
+.boton-favorites span {
+  margin-left: 0;
+}
+
+/* 🔴 Botón de cerrar sesión */
+.logout-btn {
+  margin: 40px 15px 20px;
+  --border-radius: 12px;
+  --background: linear-gradient(135deg, #ff4757, #ff6348);
+  --background-hover: linear-gradient(135deg, #ee5a6f, #ff7979);
+  --color: #ffffff;
+  font-weight: 700;
+  height: 50px;
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+}
+
+/* ==========================================
+   RESPONSIVE - TABLET
+   ========================================== */
+@media (min-width: 768px) {
+  .profile-container {
+    padding: 40px 30px;
+
+    .profile-img {
+      width: 130px;
+      height: 130px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .email {
+      font-size: 1rem;
+    }
+  }
+
+  ion-list {
+    margin: 30px auto;
+    max-width: 600px;
+  }
+
+  ion-item {
+    min-height: 60px;
+  }
+
+  .logout-btn {
+    margin: 50px auto 30px;
+    max-width: 600px;
+    height: 54px;
+  }
+}
+
+/* ==========================================
+   MODO OSCURO
+   ========================================== */
+@media (prefers-color-scheme: dark) {
+  .profile-container {
+    h2 {
+      color: #ffffff;
+    }
+
+    .email {
+      color: #aaa;
+    }
+  }
+
+  ion-list {
+    background: #2a2a2a;
+  }
+
+  ion-item {
+    --background: #1e1e1e;
+    --color: #ffffff;
+  }
+
+  ion-item:hover {
+    --background: #333;
+  }
+
+  ion-select {
+    --color: #ffffff;
+    --placeholder-color: #888;
+  }
+}

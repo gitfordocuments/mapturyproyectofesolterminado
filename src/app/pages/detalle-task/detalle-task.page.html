@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home-task"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{ task?.nombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content *ngIf="task">
+
+  <ion-card>
+    <img [src]="task.imagen" alt="Imagen del lugar" />
+
+    <ion-card-header>
+      <ion-card-title>{{ task.nombre }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ task.descripcion }}</p>
+
+      <p><strong>Latitud:</strong> {{ task.latitud }}</p>
+      <p><strong>Longitud:</strong> {{ task.longitud }}</p>
+
+      <ion-button expand="full" color="secondary" (click)="abrirMapa(task.nombre, task.latitud, task.longitud)">
+        Ver en Google Maps
+      </ion-button>
+
+      <ion-button expand="full" color="primary" (click)="compartirLugar()">
+        Compartir Lugar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content *ngIf="!task">
+  <ion-text color="danger">
+    <p class="ion-padding">No se encontró información del destino.</p>
+  </ion-text>
+</ion-content>

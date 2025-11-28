@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lookfor-task"></ion-back-button>
+    </ion-buttons>
+
+
+
+    <ion-title>{{ lugar?.nombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1>{{ lugar?.nombre }}</h1>
+  <h3>{{ lugar?.categoria }}</h3>
+  <p>{{ lugar?.descripcion }}</p>
+
+  <div style="margin-top: 15px;">
+    <iframe
+  width="100%"
+  height="300"
+  [src]="'https://www.google.com/maps?q=' + lugar.lat + ',' + lugar.lng + '&z=15&output=embed' | safeUrl"
+  style="border:0;"
+  loading="lazy"
+  allowfullscreen>
+</iframe>
+
+  </div>
+
+</ion-content>

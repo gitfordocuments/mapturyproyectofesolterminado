@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Explorar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Barra de búsqueda -->
+  <!-- ✅ AHORA -->
+  <ion-searchbar
+    placeholder="Buscar destinos"
+    show-clear-button="focus"
+    class="custom-search"
+    [(ngModel)]="searchQuery"
+    (ionInput)="onSearchChange()"
+    (ionClear)="resultados = []">
+  </ion-searchbar>
+  
+
+  <ion-list *ngIf="resultados.length > 0">
+  <ion-item *ngFor="let lugar of resultados" (click)="verDetalles(lugar)">
+    <!-- 🔥 Foto del lugar -->
+    <ion-thumbnail slot="start" *ngIf="lugar.imagen_url">
+      <img [src]="lugar.imagen_url" />
+    </ion-thumbnail>
+    
+    <ion-label>
+      <!-- 🔥 Muestra titulo (Supabase) o nombre (local) -->
+      <h2>{{ lugar.titulo || lugar.nombre }}</h2>
+      <p>{{ lugar.categoria }}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+  <!-- Categorías -->
+  <ion-label class="section-title">Categorías</ion-label>
+  <div class="categories-wrapper">
+  <div class="categories">
+    <div class="category-card">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <ion-button (click)="filtrarPorCategoria('Restaurantes')">
+        Restaurantes
+      </ion-button>
+    </div>
+    <div class="category-card">
+      <ion-icon name="business-outline"></ion-icon>
+      <ion-button (click)="filtrarPorCategoria('Museos')">
+        Museos
+      </ion-button>
+    </div>
+    <div class="category-card">
+      <ion-icon name="leaf-outline"></ion-icon>
+      <ion-button (click)="filtrarPorCategoria('Parques Nacionales')">
+        Parques Nacionales
+      </ion-button>
+    </div>
+    <div class="category-card">
+      <ion-icon name="sunny-outline"></ion-icon>
+      <ion-button (click)="filtrarPorCategoria('Bañarios')">
+        Bañarios
+      </ion-button>
+    </div>
+    <div class="category-card">
+      <ion-icon name="boat-outline"></ion-icon>
+      <ion-button (click)="filtrarPorCategoria('Playas')">
+       Playas
+      </ion-button>
+    </div>
+    <div class="category-card">
+      <ion-icon name="bar-chart-outline"></ion-icon>
+      <ion-button (click)="filtrarPorCategoria('Centros Comerciales')">
+        Centros Comerciales
+      </ion-button>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Búsquedas recientes dinámicas -->
+<ion-label class="section-title" *ngIf="busquedasRecientes.length > 0">
+  Búsquedas recientes
+</ion-label>
+
+<ion-list class="recent-list" *ngIf="busquedasRecientes.length > 0">
+  <ion-item *ngFor="let item of busquedasRecientes" lines="none">
+
+    <!-- Icono de reloj -->
+    <ion-icon name="time-outline" slot="start"></ion-icon>
+
+    <!-- Texto de la búsqueda -->
+    <ion-label (click)="searchQuery = item; onSearchChange()">
+      {{ item }}
+    </ion-label>
+
+    <!-- Botón eliminar -->
+    <ion-icon name="close-outline" slot="end" (click)="eliminarBusqueda(item)"></ion-icon>
+
+  </ion-item>
+</ion-list>
+
+</ion-content>

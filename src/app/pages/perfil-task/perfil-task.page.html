@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="profile-container">
+    <img [src]="profileImage" alt="Foto de perfil" class="profile-img" (click)="changePhoto()" />
+    
+    <div *ngIf="!isEditing">
+      <h2>{{ userName }}</h2>
+      <p class="email">{{ userEmail }}</p>
+      <ion-button size="small" fill="outline" (click)="toggleEdit()">
+        <ion-icon name="create-outline" slot="start"></ion-icon>
+        Editar perfil
+      </ion-button>
+    </div>
+
+    <div *ngIf="isEditing" class="edit-section">
+      <ion-item>
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input [(ngModel)]="userName"></ion-input>
+      </ion-item>
+
+      
+
+      <ion-button expand="block" (click)="toggleEdit()">
+          {{ isEditing ? 'Guardar Cambios' : 'Editar Perfil' }}
+        </ion-button>
+    </div>
+  </div>
+
+  <ion-list lines="none">
+     <ion-tab-button tab="favoritesTask">
+        <ion-item button detail="false" class="boton-favorites" (click)="goToRegister()">
+        <ion-icon name="heart-outline" slot="start"></ion-icon>
+        <ion-label>Favorites</ion-label>
+      </ion-item>
+    </ion-tab-button>
+       
+
+    
+  </ion-list>
+
+  <ion-button expand="block" color="danger" class="logout-btn" (click)="confirmarCerrarSesion()">
+    <ion-icon name="log-out-outline" slot="start"></ion-icon>
+    Cerrar sesión
+  </ion-button>
+
+</ion-content>
+
+
+
+

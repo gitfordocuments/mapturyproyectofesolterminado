@@ -1,0 +1,122 @@
+.registro-page {
+  --background: #f3f3f3;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 25px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 0.55s ease-out;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #1c1c1c;
+  letter-spacing: 1px;
+}
+
+.card p {
+  margin-top: 6px;
+  margin-bottom: 22px;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Inputs */
+ion-input {
+  margin-top: 14px;
+  --border-radius: 14px;
+  --padding-start: 14px;
+  --padding-end: 14px;
+  --highlight-height: 2px;
+  font-size: 0.95rem;
+  --color: #1c1c1c;
+  --placeholder-color: #999;
+}
+
+/* Botón principal */
+.boton {
+  margin-top: 22px;
+  height: 50px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  --border-radius: 16px;
+  --background: linear-gradient(135deg, #007bff, #004cff);
+  --background-activated: #003fcc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Botón de registro (clear) */
+ion-button[fill="clear"] {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  color: #555 !important;
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  margin-top: 24px;
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #1e1e1e;
+  }
+
+  .card h2 {
+    color: #ffffff;
+  }
+
+  .card p {
+    color: #aaa;
+  }
+
+  ion-input {
+    --color: #ffffff;
+    --placeholder-color: #888;
+  }
+
+  ion-button[fill="clear"] {
+    color: #aaa !important;
+  }
+
+  .footer {
+    color: #999;
+  }
+}

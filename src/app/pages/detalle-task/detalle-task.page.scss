@@ -1,0 +1,40 @@
+.detalle-page {
+  ion-img {
+    height: 240px;
+    object-fit: cover;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  ion-card {
+    margin: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    animation: fadeIn 0.6s ease-in-out;
+
+    ion-card-title {
+      font-weight: 700;
+      color: #222;
+    }
+
+    ion-card-subtitle {
+      display: flex;
+      align-items: center;
+      color: #666;
+      ion-icon {
+        margin-right: 5px;
+      }
+    }
+
+    ion-button {
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
